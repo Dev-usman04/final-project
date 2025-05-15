@@ -10,7 +10,7 @@ import { toast } from "react-toastify/unstyled"
 
 export const ProductList = () => {
     const {products, initialProductList} = useFilter()
-    const {show, setShow} = useState(false)
+    const [show, setShow] = useState(false)
     const search = useLocation().search
     const searchTerm = new URLSearchParams(search).get("q")
     useTitle ("Explore eBooks Collection")
@@ -35,8 +35,8 @@ export const ProductList = () => {
     <main>
         <section className="my-5">
             <div className=" my-5 flex justify-between items-center">
-                <span className=" text-2xl font-semibold data:text-slate-100 text-white mb-5 pl-[50px]">
-                    All eBooks
+                <span className=" text-2xl font-semibold data:text-slate-100 text-black mb-5 pl-[50px]">
+                    All eBooks ({products?.length})
                 </span>
 
                 <span>

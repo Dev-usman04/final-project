@@ -36,13 +36,13 @@ export const FilterProvider = ({children}) => {
 }
 
 const sort = (product) => {
-    if (state.sortBy === "LOW_TO_HIGH") {
+    if (state.sortBy === "lowtohigh") {
         return product.sort((a, b) => a.price - b.price)
     
     }
 
     
-    if (state.sortBy === "HIGH_TO_LOW") {
+    if (state.sortBy === "hightolow") {
         return product.sort((a, b) => Number (b.price) - Number (a.price))
     }
     return product
@@ -92,7 +92,7 @@ const value = {
 
 }
 
-
+ 
 
 export const useFilter = () => {
     const context= useContext(FilterContext)
